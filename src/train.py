@@ -26,6 +26,7 @@ def train(config_path: Text) -> None:
     # Create an instance of classifier and fit the data.
     # clf = LogisticRegression(C=0.00001, solver='lbfgs', max_iter=100)
     clf = SVC(C=0.01, kernel='linear', gamma='scale', degree=5)
+
     clf.fit(X, y)
 
     joblib.dump(clf, model_path)
